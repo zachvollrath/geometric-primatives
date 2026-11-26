@@ -15,7 +15,7 @@ ctest --test-dir build --output-on-failure
 ./build/geo_demo
 ```
 
-`geo_demo` prints a worked example of each operation below.
+`geo_demo` prints a worked example of each operation below and writes a ray-traced PNG for each one to `visualizations/`, along with `visualizations/index.html`.
 
 ## Types
 

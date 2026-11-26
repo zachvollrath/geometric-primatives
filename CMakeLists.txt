@@ -24,9 +24,12 @@ add_executable(geo_shapes_tests tests/shapes_test.cpp)
 target_link_libraries(geo_shapes_tests PRIVATE geo)
 geo_set_warnings(geo_shapes_tests)
 
-add_executable(geo_demo demo/demo.cpp)
+add_executable(geo_demo demo/demo.cpp demo/scene_view.cpp)
 target_link_libraries(geo_demo PRIVATE geo)
 geo_set_warnings(geo_demo)
+if(NOT MSVC)
+    target_compile_options(geo_demo PRIVATE -O2)
+endif()
 
 enable_testing()
 add_test(NAME primitives COMMAND geo_tests)
